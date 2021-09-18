@@ -42,6 +42,7 @@ namespace BlogProject.Models
         //Navagation Property 
 
         //indicates that Blog is a child of Author
+        [Display(Name="Author")]
         public virtual BlogUser BlogUser { get; set; }
 
         //indicates Blog is a parent of a collection of posts 
