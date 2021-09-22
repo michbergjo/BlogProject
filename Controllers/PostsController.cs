@@ -57,7 +57,7 @@ namespace BlogProject.Controllers
         // POST: Posts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+      /*  [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BlogId,Title,Abstract,Content,ReadyStatus,Image")] Post post)
         {
@@ -71,7 +71,7 @@ namespace BlogProject.Controllers
             ViewData["BlogId"] = new SelectList(_context.Blogs, "Id", "Description", post.BlogId);
            
             return View(post);
-        }
+        }*/
 
         // GET: Posts/Edit/5
         public async Task<IActionResult> Edit(int? id)
