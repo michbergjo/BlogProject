@@ -1,5 +1,7 @@
 using BlogProject.Data;
 using BlogProject.Models;
+using BlogProject.Services;
+using BlogProject.ViewModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,10 +30,7 @@ namespace BlogProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            /*  services.AddDbContext<ApplicationDbContext>(options =>
-                  options.UseSqlServer(
-                      Configuration.GetConnectionString("DefaultConnection")));*/
-           
+
             services.AddDbContext<ApplicationDbContext>(options =>
              options.UseNpgsql(
           Configuration.GetConnectionString("DefaultConnection")));
@@ -47,6 +46,12 @@ namespace BlogProject
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            //Register my custom DataService class
+            services.AddScoped<DataService>();
+
+            //register a preconfigured instance of the MailSettings class 
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
