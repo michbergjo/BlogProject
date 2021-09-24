@@ -66,10 +66,10 @@ namespace BlogProject.Services
             var adminUser = new BlogUser()
             {
                 Email = "mbergy27@gmail.com",
-                UserName = "mjoseph27",
+                UserName = "mbergy27@gmail.com",
                 FirstName = "Michelle",
                 LastName = "Joseph",
-                PhoneNumber = "(800) 55-1212",
+                PhoneNumber = "(800) 555-1212",
                 EmailConfirmed = true
             };
 
@@ -84,7 +84,7 @@ namespace BlogProject.Services
             var modUser = new BlogUser()
             {
                 Email = "abloguser27@gmail.com",
-                UserName = "ABU27",
+                UserName = "abloguser27@gmail.com",
                 FirstName = "Amanda",
                 LastName = "Peet",
                 PhoneNumber = "(800) 555-1213",
